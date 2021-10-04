@@ -1,4 +1,5 @@
-# FoodOracle
+# FoodOracle 
+*(PROG31975 Team 5 Final Project)*
 ## Purpose of app
 Purpose of this app is to provide convenience to the user with a database for recipes and everything related to them in one place which will prevent spending time on a browser trying to look at different websites for different recipes. The main goal of the app will be to solve the issue of determining what to cook with specific ingredients. This app will ultimately help users reduce food waste and teach them new recipes that they would not have known otherwise.
 
