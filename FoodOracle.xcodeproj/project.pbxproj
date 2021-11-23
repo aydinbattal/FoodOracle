@@ -11,6 +11,7 @@
 		DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DDCF274C54D2005CBC83 /* ContentView.swift */; };
 		DBC6DDD2274C54D4005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */; };
 		DBC6DDD5274C54D4005CBC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */; };
+		DBC6DDDF274C5C39005CBC83 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DDDE274C5C39005CBC83 /* DBHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		DBC6DDCF274C54D2005CBC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBC6DDDE274C5C39005CBC83 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,10 @@
 		DBC6DDCC274C54D2005CBC83 /* FoodOracle */ = {
 			isa = PBXGroup;
 			children = (
+				DBC6DDDD274C5C2B005CBC83 /* Controllers */,
+				DBC6DDDC274C5909005CBC83 /* Models */,
+				DBC6DDDB274C58FE005CBC83 /* Views */,
 				DBC6DDCD274C54D2005CBC83 /* FoodOracleApp.swift */,
-				DBC6DDCF274C54D2005CBC83 /* ContentView.swift */,
 				DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */,
 				DBC6DDD3274C54D4005CBC83 /* Preview Content */,
 			);
@@ -65,6 +69,29 @@
 				DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBC6DDDB274C58FE005CBC83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6DDCF274C54D2005CBC83 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBC6DDDC274C5909005CBC83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBC6DDDD274C5C2B005CBC83 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6DDDE274C5C39005CBC83 /* DBHelper.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */,
+				DBC6DDDF274C5C39005CBC83 /* DBHelper.swift in Sources */,
 				DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
