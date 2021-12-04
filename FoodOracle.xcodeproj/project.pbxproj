@@ -32,6 +32,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D6596A7275C100A0027086B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7D6596A8275C101C0027086B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D6596A9275C10250027086B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DBC6DDC1274C54D2005CBC83 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +72,9 @@
 		DBC6DDCC274C54D2005CBC83 /* FoodOracle */ = {
 			isa = PBXGroup;
 			children = (
+				7D6596A7275C100A0027086B /* Models */,
+				7D6596A8275C101C0027086B /* Views */,
+				7D6596A9275C10250027086B /* Controllers */,
 				DBC6DDCD274C54D2005CBC83 /* FoodOracleApp.swift */,
 				DBC6DDCF274C54D2005CBC83 /* ContentView.swift */,
 				DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */,
