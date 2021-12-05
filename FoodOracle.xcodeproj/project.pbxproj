@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143CE449275C5464001BC8CE /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CE448275C5464001BC8CE /* Ingredient.swift */; };
 		1485908D275C2FA500A3DA9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */; };
 		1485908F275C34FE00A3DA9A /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485908E275C34FE00A3DA9A /* FireDBHelper.swift */; };
 		14859091275C355900A3DA9A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14859090275C355900A3DA9A /* Recipe.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		143CE448275C5464001BC8CE /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1485908E275C34FE00A3DA9A /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
 		14859090275C355900A3DA9A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				DBC6DDD3274C54D4005CBC83 /* Preview Content */,
 				1485908E275C34FE00A3DA9A /* FireDBHelper.swift */,
 				14859090275C355900A3DA9A /* Recipe.swift */,
+				143CE448275C5464001BC8CE /* Ingredient.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */,
 				1485908F275C34FE00A3DA9A /* FireDBHelper.swift in Sources */,
+				143CE449275C5464001BC8CE /* Ingredient.swift in Sources */,
 				DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */,
 				14859091275C355900A3DA9A /* Recipe.swift in Sources */,
 			);

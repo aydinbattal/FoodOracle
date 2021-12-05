@@ -7,23 +7,27 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import SwiftUI
 
 struct Recipe: Hashable, Codable{
     @DocumentID var id: String? = UUID().uuidString
     var title: String = ""
     var description: String = ""
-    var ingredients: String = ""
+    var ingredients: [Ingredient] = []
     var steps: String = ""
+    var isFavourite: Bool = false
+    //var test: [String] = []
     
     init() {
         
     }
     
-    init(title: String, description: String, ingredients: String, steps: String) {
+    init(title: String, description: String, ingredients: [Ingredient], steps: String, isFavourite: Bool) {
         self.title = title
         self.description = description
         self.ingredients = ingredients
         self.steps = steps
+        self.isFavourite = isFavourite
     }
     
     
@@ -37,7 +41,7 @@ struct Recipe: Hashable, Codable{
             return nil
         }
         
-        guard let ingredients = dictionary["ingredients"] as? String else {
+        guard let ingredients = dictionary["ingredients"] as? [Ingredient] else {
             return nil
         }
         
@@ -45,6 +49,10 @@ struct Recipe: Hashable, Codable{
             return nil
         }
         
-        self.init(title: title, description: description, ingredients: ingredients, steps: steps)
+        guard let isFavourite = dictionary["isFavourite"] as? Bool else {
+            return nil
+        }
+        
+        self.init(title: title, description: description, ingredients: ingredients, steps: steps, isFavourite: isFavourite)
     }
 }
