@@ -29,7 +29,14 @@ class FireDBHelper : ObservableObject{
     }
     
     func addRecipe(newRecipe: Recipe){
-        //self.store.collection(COLLECTION_NAME)
+        do{
+            
+            try self.store.collection(COLLECTION_NAME).addDocument(from: newRecipe)
+            
+            print(#function, "Doc succesfully added to Firestore")
+        }catch let error as NSError{
+            print(#function, "Error while inserting document on firestore", error)
+        }
     }
     
     func getAllRecipes(){
