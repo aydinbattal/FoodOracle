@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 import SwiftUI
 
-struct Recipe: Hashable, Codable{
+struct Recipe: Hashable, Codable, Identifiable{
     @DocumentID var id: String? = UUID().uuidString
     var title: String = ""
     var description: String = ""

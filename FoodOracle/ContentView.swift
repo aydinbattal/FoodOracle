@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var fireDBHelper : DBHelper
+    @EnvironmentObject var fireDBHelper : FireDBHelper
     
     var body: some View {
         NavigationView{
@@ -16,7 +16,7 @@ struct ContentView: View {
                 GeometryReader{_ in
                     Text("Home")
                 }.background(Color("Color").edgesIgnoringSafeArea(.all))
-                SearchBar(data: self.fireDBHelper.receiptList)
+                SearchBar(data: self.fireDBHelper.recipeList)
             }
         }
     }
@@ -30,7 +30,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct SearchBar: View {
     @State var tfSearch = ""
-    var data : [dataType]
+    var data : [Recipe]
     
     var body : some View {
         VStack(spacing: 0){
@@ -46,13 +46,13 @@ struct SearchBar: View {
                 }
             }.padding()
             if (self.tfSearch != ""){
-                if (self.data.filter({$0.name.lowercased().contains(self.tfSearch.lowercased())}).count == 0){
+                if (self.data.filter({$0.description.lowercased().contains(self.tfSearch.lowercased())}).count == 0){
                     Text("No Results Found")
-                        .foregroundColor(Color.black.opacity(0.5).padding() as! Color)
+                        .foregroundColor(Color.black.opacity(0.5).padding() as? Color)
                 } else {
-                    List(self.data.filter{$0.name.lowercased().contains(self.tfSearch.lowercased())}){i in
+                    List(self.data.filter{$0.description.lowercased().contains(self.tfSearch.lowercased())}){i in
                         NavigationLink(destination: Detail(data: i)){
-                            Text(i.name)
+                            Text(i.description)
                         }
                     }.frame(height: UIScreen.main.bounds.height/5)
                     
@@ -64,10 +64,10 @@ struct SearchBar: View {
 }
 
 struct Detail : View {
-    var data : dataType
+    var data : Recipe
     
     var body : some View{
-        Text(data.name)
+        Text(data.title)
     }
 }
 
