@@ -33,7 +33,48 @@ class FireDBHelper : ObservableObject{
     }
     
     func getAllRecipes(){
-        //self.store.collection(COLLECTION_NAME)
+        self.store.collection(COLLECTION_NAME)
+            .whereField("MyRecipies", isEqualTo: true)
+            .order(by: "title", descending: true)
+            .addSnapshotListener({(querySnapshot, error) in
+                guard let snapshot = querySnapshot else{
+                    print(#function, "Error getting the snapshot from listener", error as Any)
+                    return
+                }
+                
+                //no error
+                snapshot.documentChanges.forEach{ (docChange) in
+                    
+                    var recipe = Recipe()
+                    
+                    do{
+                        recipe = try docChange.document.data(as: Recipe.self)!
+                        let docId = docChange.document.documentID
+                        let matchedIndex = self.recipeList.firstIndex(where: {($0.id?.elementsEqual(docId))!})
+                        
+                        if docChange.type == .added{
+                            self.recipeList.append(recipe)
+                            print(#function, "New Dc Added " , recipe)
+                        }
+                        
+                        if docChange.type == .modified{
+                            if (matchedIndex != nil){
+                                self.recipeList[matchedIndex!] = recipe
+                            }
+                        }
+                        
+                        if docChange.type == .removed{
+                            if (matchedIndex != nil){
+                                self.recipeList.remove(at: matchedIndex!)
+                            }
+                        }
+                        
+                    }catch let error as NSError{
+                        print(#function, "Error while retrieving doc change", error)
+                    }
+                }
+                
+            })
     }
     
     func updateRecipe(recipeToUpdate: Recipe){
