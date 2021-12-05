@@ -14,7 +14,7 @@ struct Recipe: Hashable, Codable, Identifiable{
     var title: String = ""
     var description: String = ""
     var ingredients: [Ingredient] = []
-    var steps: String = ""
+    var steps: [String] = []
     var isFavourite: Bool = false
     //var test: [String] = []
     
@@ -22,7 +22,7 @@ struct Recipe: Hashable, Codable, Identifiable{
         
     }
     
-    init(title: String, description: String, ingredients: [Ingredient], steps: String, isFavourite: Bool) {
+    init(title: String, description: String, ingredients: [Ingredient], steps: [String], isFavourite: Bool) {
         self.title = title
         self.description = description
         self.ingredients = ingredients
@@ -45,7 +45,7 @@ struct Recipe: Hashable, Codable, Identifiable{
             return nil
         }
         
-        guard let steps = dictionary["steps"] as? String else {
+        guard let steps = dictionary["steps"] as? [String] else {
             return nil
         }
         
