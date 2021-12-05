@@ -6,12 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestore
 
 @main
 struct FoodOracleApp: App {
+    let fireDBHelper: FireDBHelper
+    
+    init(){
+        FirebaseApp.configure()
+        fireDBHelper = FireDBHelper(database: Firestore.firestore())
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(fireDBHelper)
         }
     }
 }
