@@ -9,21 +9,67 @@ import SwiftUI
 
 struct AddRecipeView: View {
     @State private var description: String = ""
-    @State private var ingredients: Array = []
+    @State private var ingredients: Ingredient
     @State private var steps: String = ""
-    @State private var author: String = ""
     @State private var title: String = ""
-    
-    @Environment(\.presentationMode) var presentationMode
+    @State private var isFavourite: Bool = false
+  
     @EnvironmentObject var fireDBHelper: FireDBHelper
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Form{
+                TextField("Enter title", text: self.$title)
+                    .autocapitalization(.words)
+                
+                TextField("Enter Description", text: self.$description)
+                    .autocapitalization(.words)
+                HStack{
+                    TextField("Enter ingridient name", text: self.$ingredients.ingredientName)
+                        .autocapitalization(.words)
+                    TextField("Enter ingridient amount", value: self.$ingredients.amount, formatter: NumberFormatter())
+                        .autocapitalization(.words)
+                    
+                }
+              
+                
+                TextField("Enter Steps", text: self.$steps)
+                    .autocapitalization(.words)
+                
+                Toggle(isOn: self.$isFavourite, label: {
+                    Text("Favourite")
+                })
+                
+            }//Form
+            
+            Button(action: {
+                self.addNewRecipe()
+              
+            }){
+                Text("Add Recipie")
+                
+            }
+            
+            Spacer()
+        }//VStack
+    }//body
+    private func addNewRecipe(){
+        @State var listOfIngredients: [Ingredient] = []
+        listOfIngredients.append(Ingredient(amount: self.ingredients.amount, ingredientName: self.ingredients.ingredientName))
+        @State var listOfSteps: Array = [""]
+        listOfSteps.append(String(steps))
+        print("Adding recipe to database")
+        if (!self.title.isEmpty && !self.description.isEmpty){
+            //add to database
+            self.fireDBHelper.addRecipe(newRecipe: Recipe(title: self.title, description: self.description, ingredients: listOfIngredients, steps: listOfSteps, isFavourite: self.isFavourite ))
+        }else{
+            print(#function, "Show Alert that title and description cannot be empty")
+        }
     }
-}
+}//view
 
-struct AddRecipeView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddRecipeView()
-    }
-}
+//struct AddRecipeView_Previews: PreviewProvider {
+ //   static var previews: some View {
+  //      AddRecipeView()
+  //  }
+//}
