@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var fireDBHelper : FireDBHelper
     
     var body: some View {
+        Text(self.fireDBHelper.recipeList[0].description)
         NavigationView{
             ZStack(alignment: .top){
                 GeometryReader{_ in
@@ -58,6 +59,7 @@ struct SearchBar: View {
                     
                 }
             }
+            Text(self.data.description)
         }.background(Color.white)
             .padding()
     }
