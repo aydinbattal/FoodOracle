@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AddRecipeView: View {
     @State private var description: String = ""
-    @State private var ingredients: Ingredient
+    @State private var ingredientAmount: Int = 0
+    @State private var ingredientName: String = ""
     @State private var steps: String = ""
     @State private var title: String = ""
     @State private var isFavourite: Bool = false
@@ -25,9 +26,9 @@ struct AddRecipeView: View {
                 TextField("Enter Description", text: self.$description)
                     .autocapitalization(.words)
                 HStack{
-                    TextField("Enter ingridient name", text: self.$ingredients.ingredientName)
+                    TextField("Enter ingridient name", text: self.$ingredientName)
                         .autocapitalization(.words)
-                    TextField("Enter ingridient amount", value: self.$ingredients.amount, formatter: NumberFormatter())
+                    TextField("Enter ingridient amount", value: self.$ingredientAmount, formatter: NumberFormatter())
                         .autocapitalization(.words)
                     
                 }
@@ -55,7 +56,7 @@ struct AddRecipeView: View {
     }//body
     private func addNewRecipe(){
         @State var listOfIngredients: [Ingredient] = []
-        listOfIngredients.append(Ingredient(amount: self.ingredients.amount, ingredientName: self.ingredients.ingredientName))
+        listOfIngredients.append(Ingredient(amount: self.ingredientAmount, ingredientName: self.ingredientName))
         @State var listOfSteps: Array = [""]
         listOfSteps.append(String(steps))
         print("Adding recipe to database")
