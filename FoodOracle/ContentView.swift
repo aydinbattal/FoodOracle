@@ -11,16 +11,22 @@ struct ContentView: View {
     @EnvironmentObject var fireDBHelper : FireDBHelper
     
     var body: some View {
-        Text(self.fireDBHelper.recipeList[0].description)
         NavigationView{
             ZStack(alignment: .top){
-                GeometryReader{_ in
-                    Text("Home")
-                }.background(Color("Color").edgesIgnoringSafeArea(.all))
-                SearchBar(data: self.fireDBHelper.recipeList)
+                if (self.fireDBHelper.recipeList.count > 0){
+                    GeometryReader{_ in
+                        Text("Home")
+                    }.background(Color("Color").edgesIgnoringSafeArea(.all))
+                    SearchBar(data: self.fireDBHelper.recipeList)
+                    
+                }
             }
         }
+        .onAppear(){
+            self.fireDBHelper.getAllRecipes()
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -53,13 +59,12 @@ struct SearchBar: View {
                 } else {
                     List(self.data.filter{$0.description.lowercased().contains(self.tfSearch.lowercased())}){i in
                         NavigationLink(destination: Detail(data: i)){
-                            Text(i.description)
+                            Text(i.title)
                         }
                     }.frame(height: UIScreen.main.bounds.height/5)
                     
                 }
             }
-            Text(self.data.description)
         }.background(Color.white)
             .padding()
     }
@@ -70,10 +75,8 @@ struct Detail : View {
     
     var body : some View{
         Text(data.title)
+        Text(data.description)
     }
 }
 
-struct dataType : Identifiable{
-    var id : UUID
-    var name : String
-}
+

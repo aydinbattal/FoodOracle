@@ -41,7 +41,6 @@ class FireDBHelper : ObservableObject{
     
     func getAllRecipes(){
         self.store.collection(COLLECTION_NAME)
-            .whereField("MyRecipes", isEqualTo: true)
             .order(by: "title", descending: true)
             .addSnapshotListener({(querySnapshot, error) in
                 guard let snapshot = querySnapshot else{
