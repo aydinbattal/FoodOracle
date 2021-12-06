@@ -84,11 +84,27 @@ class FireDBHelper : ObservableObject{
     }
     
     func updateRecipe(recipeToUpdate: Recipe){
-        //self.store.collection(COLLECTION_NAME)
+        self.store.collection(COLLECTION_NAME)
+            .document(recipeToUpdate.id!)
+            .updateData(["title" : recipeToUpdate.title, "description": recipeToUpdate.description, "ingredients": recipeToUpdate.ingredients, "steps": recipeToUpdate.steps, "favourite": recipeToUpdate.isFavourite]){ error in
+                if let error = error{
+                    print(#function, "Error while updating doc \(error)")
+                }else{
+                    print(#function, "Successfully updated doc")
+                }
+            }
     }
     
     func deleteRecipe(recipeToDelete: Recipe){
-        //self.store.collection(COLLECTION_NAME)
+        self.store.collection(COLLECTION_NAME)
+            .document(recipeToDelete.id!)
+            .delete{ error in
+                if let error = error{
+                    print(#function, "Error while deleteing doc \(error)")
+                }else{
+                    print(#function, "Successfully deleted doc")
+                }
+            }
     }
     
     func searchRecipe(recipeToSearch: Recipe){
