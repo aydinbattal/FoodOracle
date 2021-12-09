@@ -12,39 +12,41 @@ struct ContentView: View {
     @State private var selection: Int? = nil
     
     var body: some View {
-        //NavigationView{
+        NavigationView{
             ZStack(alignment: .top){
                 NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
                     GeometryReader{_ in
-                        Text("Home")
-                    }.background(Color("Color").edgesIgnoringSafeArea(.all))
-//                    SearchBar(data: self.fireDBHelper.recipeList)
-                    
-                    List{
-                        SearchBar(data: self.fireDBHelper.recipeList)
-                        ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
-                            NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
-                                VStack(alignment: .leading){
-                                    Text("\(currentRecipe.title)")
-                                        .fontWeight(.bold)
-                                    
-                                    Text("\(currentRecipe.description)")
-                                        .font(.callout)
-                                        .italic()
-                                }.padding(20)
-                                .onTapGesture {
-                                    print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                        ZStack{
+                        List{
+//                            SearchBar(data: self.fireDBHelper.recipeList)
+                            ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
+                                NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
+                                    VStack(alignment: .leading){
+                                        Text("\(currentRecipe.title)")
+                                            .fontWeight(.bold)
+                                        
+    //                                    Text("\(currentRecipe.description)")
+    //                                        .font(.callout)
+    //                                        .italic()
+                                    }.padding(20)
+                                    .onTapGesture {
+                                        print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                                    }
+                                }//NavigationLink
+                            }//ForEach
+                            .onDelete(perform: {indexSet in
+                                for index in indexSet{
+                                    //ask for confirmation and then delete
+                                    self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
                                 }
-                            }//NavigationLink
-                        }//ForEach
-                        .onDelete(perform: {indexSet in
-                            for index in indexSet{
-                                //ask for confirmation and then delete
-                                self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
-                            }
-                        })
-                    }//List
+                            })
+                        }//List
+                        }
+                    }.background(Color("Color").edgesIgnoringSafeArea(.all))
+                    SearchBar(data: self.fireDBHelper.recipeList)
+                    
+                    
                     
                 }//if
                 else{
@@ -56,7 +58,7 @@ struct ContentView: View {
             }//zstack
           
             
-        //}//navigation view
+        }//navigation view
         .navigationBarItems(trailing: Button("Add New Recipe", action: {
             self.selection = 1
         }))
@@ -115,7 +117,7 @@ struct Detail : View {
     var body : some View{
         Text(data.title)
         Text(data.description)
-        Text(data.steps.first ?? "step 1")
+//        Text(data.steps.first ?? "step 1")
     }
 }
 
