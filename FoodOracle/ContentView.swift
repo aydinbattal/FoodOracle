@@ -57,7 +57,9 @@ struct ContentView: View {
             .navigationBarItems(trailing: Button("Add New Recipe", action: {
                 self.selection = 1
             }))
+            
         }//navigation view
+        .navigationBarBackButtonHidden(true)
         .onAppear(){
             self.fireDBHelper.getAllRecipes()
         }
