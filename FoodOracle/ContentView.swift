@@ -76,6 +76,7 @@ struct Detail : View {
     var body : some View{
         Text(data.title)
         Text(data.description)
+        Text(data.steps.first ?? "step 1")
     }
 }
 

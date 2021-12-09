@@ -55,9 +55,9 @@ struct AddRecipeView: View {
         }//VStack
     }//body
     private func addNewRecipe(){
-        @State var listOfIngredients: [Ingredient] = []
+        var listOfIngredients = [Ingredient]()
         listOfIngredients.append(Ingredient(amount: self.ingredientAmount, ingredientName: self.ingredientName))
-        @State var listOfSteps: Array = [""]
+        var listOfSteps = [String]()
         listOfSteps.append(String(steps))
         print("Adding recipe to database")
         if (!self.title.isEmpty && !self.description.isEmpty){
