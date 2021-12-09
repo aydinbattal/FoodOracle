@@ -19,6 +19,7 @@ struct AddRecipeView: View {
     @State private var title: String = ""
     @State private var isFavourite: Bool = false
     @State private var ingredients:  [Ingredient] = []
+    @State private var stepsList: [String] = []
   
     @EnvironmentObject var fireDBHelper: FireDBHelper
     
@@ -45,6 +46,7 @@ struct AddRecipeView: View {
                     
                     TextField("Enter Steps", text: self.$steps)
                         .autocapitalization(.words)
+                    Button(action: {self.addSteps()}){Text("Add Steps")}
                     
                     Toggle(isOn: self.$isFavourite, label: {
                         Text("Favourite")
@@ -67,12 +69,12 @@ struct AddRecipeView: View {
     private func addNewRecipe(){
       //  var listOfIngredients = [Ingredient]()
      //   listOfIngredients.append(Ingredient(amount: self.ingredientAmount, ingredientName: self.ingredientName))
-        var listOfSteps = [String]()
-        listOfSteps.append(String(steps))
+       // var listOfSteps = [String]()
+      //  listOfSteps.append(String(steps))
         print("Adding recipe to database")
         if (!self.title.isEmpty && !self.description.isEmpty){
             //add to database
-            self.fireDBHelper.addRecipe(newRecipe: Recipe(title: self.title, description: self.description, ingredients: ingredients, steps: listOfSteps, isFavourite: self.isFavourite ))
+            self.fireDBHelper.addRecipe(newRecipe: Recipe(title: self.title, description: self.description, ingredients: ingredients, steps: stepsList, isFavourite: self.isFavourite ))
         }else{
             print(#function, "Show Alert that title and description cannot be empty")
         }
@@ -88,6 +90,16 @@ struct AddRecipeView: View {
         }
         print(#function, "Ingredients: \(self.ingredients)")
     }
+    private func addSteps(){
+        if (!self.steps.isEmpty){
+            self.stepsList.append(self.steps)
+            self.steps = ""
+        }
+        else{
+            print(#function, "Show Alert that steps cannot be empty")
+        }
+        print(#function, "Steps: \(self.steps)")
+      }
 }//view
 
 //struct AddRecipeView_Previews: PreviewProvider {
