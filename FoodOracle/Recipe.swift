@@ -14,7 +14,12 @@ struct Recipe: Hashable, Codable, Identifiable{
     var title: String = ""
     var description: String = ""
     var ingredients: [Ingredient] = []
+//    var vegetables: String = ""
+//    var dairy: String = ""
+//    var fruits: String = ""
+//    var proteins: String = ""
     var steps: [String] = []
+    //var steps: String = ""
     var isFavourite: Bool = false
     //var test: [String] = []
     
@@ -29,6 +34,17 @@ struct Recipe: Hashable, Codable, Identifiable{
         self.steps = steps
         self.isFavourite = isFavourite
     }
+    
+//    init(title: String, description: String, vegetables: String , dairy: String, fruits: String, proteins: String, steps: String, isFavourite: Bool) {
+//        self.title = title
+//        self.description = description
+//        self.vegetables = vegetables
+//        self.dairy = dairy
+//        self.fruits = fruits
+//        self.proteins = proteins
+//        self.steps = steps
+//        self.isFavourite = isFavourite
+//    }
     
     
     //initializer used to parse JSON objects into swift object
@@ -45,9 +61,26 @@ struct Recipe: Hashable, Codable, Identifiable{
             return nil
         }
         
+//        guard let vegetables = dictionary["vegetables"] as? String else {
+//            return nil
+//        }
+//        guard let dairy = dictionary["dairy"] as? String else {
+//            return nil
+//        }
+//        guard let fruits = dictionary["fruits"] as? String else {
+//            return nil
+//        }
+//        guard let proteins = dictionary["proteins"] as? String else {
+//            return nil
+//        }
+        
         guard let steps = dictionary["steps"] as? [String] else {
             return nil
         }
+        
+//        guard let steps = dictionary["steps"] as? String else {
+//            return nil
+//        }
         
         guard let isFavourite = dictionary["isFavourite"] as? Bool else {
             return nil
