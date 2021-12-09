@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var selection: Int? = nil
     
     var body: some View {
-        NavigationView{
+        //NavigationView{
             ZStack(alignment: .top){
                 NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
@@ -56,7 +56,7 @@ struct ContentView: View {
             }//zstack
           
             
-        }//navigation view
+        //}//navigation view
         .navigationBarItems(trailing: Button("Add New Recipe", action: {
             self.selection = 1
         }))
