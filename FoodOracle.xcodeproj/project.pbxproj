@@ -17,7 +17,60 @@
 		DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DDCF274C54D2005CBC83 /* ContentView.swift */; };
 		DBC6DDD2274C54D4005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */; };
 		DBC6DDD5274C54D4005CBC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */; };
+		DBC6DE3D27618C29005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DE3C27618C29005CBC83 /* Assets.xcassets */; };
+		DBC6DE4327618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBC6DE4227618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBC6DE4827618C29005CBC83 /* FoodOracleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DE4727618C29005CBC83 /* FoodOracleApp.swift */; };
+		DBC6DE4A27618C29005CBC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DE4927618C29005CBC83 /* ContentView.swift */; };
+		DBC6DE4C27618C29005CBC83 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DE4B27618C29005CBC83 /* NotificationController.swift */; };
+		DBC6DE4E27618C29005CBC83 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DE4D27618C29005CBC83 /* NotificationView.swift */; };
+		DBC6DE5027618C29005CBC83 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DE4F27618C29005CBC83 /* ComplicationController.swift */; };
+		DBC6DE5227618C2A005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DE5127618C2A005CBC83 /* Assets.xcassets */; };
+		DBC6DE5527618C2A005CBC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DE5427618C2A005CBC83 /* Preview Assets.xcassets */; };
+		DBC6DE5A27618C2A005CBC83 /* FoodOracleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DBC6DE3A27618C25005CBC83 /* FoodOracleWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBC6DE6327618CC6005CBC83 /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485908E275C34FE00A3DA9A /* FireDBHelper.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBC6DE4427618C29005CBC83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBC6DDC2274C54D2005CBC83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBC6DE4127618C29005CBC83;
+			remoteInfo = "FoodOracleWatch WatchKit Extension";
+		};
+		DBC6DE5827618C2A005CBC83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBC6DDC2274C54D2005CBC83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBC6DE3927618C25005CBC83;
+			remoteInfo = FoodOracleWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBC6DE5B27618C2A005CBC83 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DBC6DE5A27618C2A005CBC83 /* FoodOracleWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC6DE5E27618C2A005CBC83 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBC6DE4327618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		143CE448275C5464001BC8CE /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
@@ -33,6 +86,18 @@
 		DBC6DDCF274C54D2005CBC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBC6DE3A27618C25005CBC83 /* FoodOracleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOracleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC6DE3C27618C29005CBC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBC6DE4227618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FoodOracleWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC6DE4727618C29005CBC83 /* FoodOracleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOracleApp.swift; sourceTree = "<group>"; };
+		DBC6DE4927618C29005CBC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DBC6DE4B27618C29005CBC83 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DBC6DE4D27618C29005CBC83 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		DBC6DE4F27618C29005CBC83 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		DBC6DE5127618C2A005CBC83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBC6DE5427618C2A005CBC83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBC6DE5627618C2A005CBC83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBC6DE5727618C2A005CBC83 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +106,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5087EE4DFD500AF19BF689 /* Pods_FoodOracle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC6DE3F27618C29005CBC83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				DBC6DDCC274C54D2005CBC83 /* FoodOracle */,
+				DBC6DE3B27618C25005CBC83 /* FoodOracleWatch */,
+				DBC6DE4627618C29005CBC83 /* FoodOracleWatch WatchKit Extension */,
 				DBC6DDCB274C54D2005CBC83 /* Products */,
 				54B44B3BEA2DCE6FA0632B28 /* Pods */,
 				B36F77C7424D4CF38F735477 /* Frameworks */,
@@ -99,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				DBC6DDCA274C54D2005CBC83 /* FoodOracle.app */,
+				DBC6DE3A27618C25005CBC83 /* FoodOracleWatch.app */,
+				DBC6DE4227618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +206,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DBC6DE3B27618C25005CBC83 /* FoodOracleWatch */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6DE3C27618C29005CBC83 /* Assets.xcassets */,
+			);
+			path = FoodOracleWatch;
+			sourceTree = "<group>";
+		};
+		DBC6DE4627618C29005CBC83 /* FoodOracleWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6DE4727618C29005CBC83 /* FoodOracleApp.swift */,
+				DBC6DE4927618C29005CBC83 /* ContentView.swift */,
+				DBC6DE4B27618C29005CBC83 /* NotificationController.swift */,
+				DBC6DE4D27618C29005CBC83 /* NotificationView.swift */,
+				DBC6DE4F27618C29005CBC83 /* ComplicationController.swift */,
+				DBC6DE5127618C2A005CBC83 /* Assets.xcassets */,
+				DBC6DE5627618C2A005CBC83 /* Info.plist */,
+				DBC6DE5727618C2A005CBC83 /* PushNotificationPayload.apns */,
+				DBC6DE5327618C2A005CBC83 /* Preview Content */,
+			);
+			path = "FoodOracleWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		DBC6DE5327618C2A005CBC83 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DBC6DE5427618C2A005CBC83 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,15 +250,51 @@
 				DBC6DDC7274C54D2005CBC83 /* Frameworks */,
 				DBC6DDC8274C54D2005CBC83 /* Resources */,
 				E23C538638B5FD6FD2070780 /* [CP] Embed Pods Frameworks */,
+				DBC6DE5B27618C2A005CBC83 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBC6DE5927618C2A005CBC83 /* PBXTargetDependency */,
 			);
 			name = FoodOracle;
 			productName = FoodOracle;
 			productReference = DBC6DDCA274C54D2005CBC83 /* FoodOracle.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DBC6DE3927618C25005CBC83 /* FoodOracleWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBC6DE6227618C2B005CBC83 /* Build configuration list for PBXNativeTarget "FoodOracleWatch" */;
+			buildPhases = (
+				DBC6DE3827618C25005CBC83 /* Resources */,
+				DBC6DE5E27618C2A005CBC83 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBC6DE4527618C29005CBC83 /* PBXTargetDependency */,
+			);
+			name = FoodOracleWatch;
+			productName = FoodOracleWatch;
+			productReference = DBC6DE3A27618C25005CBC83 /* FoodOracleWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DBC6DE4127618C29005CBC83 /* FoodOracleWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBC6DE6127618C2B005CBC83 /* Build configuration list for PBXNativeTarget "FoodOracleWatch WatchKit Extension" */;
+			buildPhases = (
+				DBC6DE3E27618C29005CBC83 /* Sources */,
+				DBC6DE3F27618C29005CBC83 /* Frameworks */,
+				DBC6DE4027618C29005CBC83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoodOracleWatch WatchKit Extension";
+			productName = "FoodOracleWatch WatchKit Extension";
+			productReference = DBC6DE4227618C29005CBC83 /* FoodOracleWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -163,6 +307,12 @@
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					DBC6DDC9274C54D2005CBC83 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					DBC6DE3927618C25005CBC83 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					DBC6DE4127618C29005CBC83 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -181,6 +331,8 @@
 			projectRoot = "";
 			targets = (
 				DBC6DDC9274C54D2005CBC83 /* FoodOracle */,
+				DBC6DE3927618C25005CBC83 /* FoodOracleWatch */,
+				DBC6DE4127618C29005CBC83 /* FoodOracleWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +345,23 @@
 				DBC6DDD5274C54D4005CBC83 /* Preview Assets.xcassets in Resources */,
 				DBC6DDD2274C54D4005CBC83 /* Assets.xcassets in Resources */,
 				1485908D275C2FA500A3DA9A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC6DE3827618C25005CBC83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC6DE3D27618C29005CBC83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC6DE4027618C29005CBC83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC6DE5527618C2A005CBC83 /* Preview Assets.xcassets in Resources */,
+				DBC6DE5227618C2A005CBC83 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +423,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBC6DE3E27618C29005CBC83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBC6DE4C27618C29005CBC83 /* NotificationController.swift in Sources */,
+				DBC6DE6327618CC6005CBC83 /* FireDBHelper.swift in Sources */,
+				DBC6DE4A27618C29005CBC83 /* ContentView.swift in Sources */,
+				DBC6DE5027618C29005CBC83 /* ComplicationController.swift in Sources */,
+				DBC6DE4827618C29005CBC83 /* FoodOracleApp.swift in Sources */,
+				DBC6DE4E27618C29005CBC83 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBC6DE4527618C29005CBC83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBC6DE4127618C29005CBC83 /* FoodOracleWatch WatchKit Extension */;
+			targetProxy = DBC6DE4427618C29005CBC83 /* PBXContainerItemProxy */;
+		};
+		DBC6DE5927618C2A005CBC83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBC6DE3927618C25005CBC83 /* FoodOracleWatch */;
+			targetProxy = DBC6DE5827618C2A005CBC83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DBC6DDD6274C54D4005CBC83 /* Debug */ = {
@@ -431,6 +626,118 @@
 			};
 			name = Release;
 		};
+		DBC6DE5C27618C2A005CBC83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = FoodOracleWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = FoodOracleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ca.sheridancollege.FoodOracle;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sheridancollege.FoodOracle.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		DBC6DE5D27618C2A005CBC83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = FoodOracleWatch_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = FoodOracleWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = ca.sheridancollege.FoodOracle;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sheridancollege.FoodOracle.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		DBC6DE5F27618C2A005CBC83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FoodOracleWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CGV7KX4AP5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FoodOracleWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FoodOracleWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sheridancollege.FoodOracle.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		DBC6DE6027618C2A005CBC83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FoodOracleWatch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CGV7KX4AP5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FoodOracleWatch WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "FoodOracleWatch WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.sheridancollege.FoodOracle.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,6 +755,24 @@
 			buildConfigurations = (
 				DBC6DDD9274C54D4005CBC83 /* Debug */,
 				DBC6DDDA274C54D4005CBC83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBC6DE6127618C2B005CBC83 /* Build configuration list for PBXNativeTarget "FoodOracleWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC6DE5F27618C2A005CBC83 /* Debug */,
+				DBC6DE6027618C2A005CBC83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBC6DE6227618C2B005CBC83 /* Build configuration list for PBXNativeTarget "FoodOracleWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBC6DE5C27618C2A005CBC83 /* Debug */,
+				DBC6DE5D27618C2A005CBC83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
