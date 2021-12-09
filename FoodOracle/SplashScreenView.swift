@@ -15,6 +15,8 @@ struct SplashScreen: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
+                Text("Food Oracle")
+                    .font(.largeTitle)
                 Image("foodoracle")
                 NavigationLink(destination: main,
                                isActive: $isActive,
