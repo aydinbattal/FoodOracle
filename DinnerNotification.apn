@@ -1,0 +1,7 @@
+{
+	"aps": {
+		"alert": "Heads Up, It's Dinner Time!",
+		"sound": "default",
+		"badge": 3
+	}
+}
