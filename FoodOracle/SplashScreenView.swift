@@ -16,7 +16,7 @@ struct SplashScreen: View {
         NavigationView {
             VStack(alignment: .center) {
                 Image("foodoracle")
-                NavigationLink(destination: login,
+                NavigationLink(destination: main,
                                isActive: $isActive,
                                label: { EmptyView() })
             }
