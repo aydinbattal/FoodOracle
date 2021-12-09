@@ -54,11 +54,12 @@ struct ContentView: View {
                     }
                 }//else
             }//zstack
-            .navigationBarItems(trailing: Button("Add New Recipe", action: {
-                self.selection = 1
-            }))
+          
             
         }//navigation view
+        .navigationBarItems(trailing: Button("Add New Recipe", action: {
+            self.selection = 1
+        }))
         .navigationBarBackButtonHidden(true)
         .onAppear(){
             self.fireDBHelper.getAllRecipes()
