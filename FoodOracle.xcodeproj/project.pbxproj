@@ -15,6 +15,7 @@
 		4E5087EE4DFD500AF19BF689 /* Pods_FoodOracle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC478960E99F398464E5236 /* Pods_FoodOracle.framework */; };
 		7D67FE49275D6473007B5E95 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE48275D6473007B5E95 /* AddRecipeView.swift */; };
 		7D68A2C227617CE500108F02 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D68A2C127617CE500108F02 /* SplashScreenView.swift */; };
+		DB532D49276273A90011673B /* PushNotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB532D48276273A90011673B /* PushNotificationHelper.swift */; };
 		DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DDCD274C54D2005CBC83 /* FoodOracleApp.swift */; };
 		DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC6DDCF274C54D2005CBC83 /* ContentView.swift */; };
 		DBC6DDD2274C54D4005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		7D68A2C127617CE500108F02 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8F1521B28B037DF5B8CDEFC8 /* Pods-FoodOracle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOracle.release.xcconfig"; path = "Target Support Files/Pods-FoodOracle/Pods-FoodOracle.release.xcconfig"; sourceTree = "<group>"; };
 		CAC478960E99F398464E5236 /* Pods_FoodOracle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodOracle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB532D48276273A90011673B /* PushNotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationHelper.swift; sourceTree = "<group>"; };
 		DBC6DDCA274C54D2005CBC83 /* FoodOracle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOracle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC6DDCD274C54D2005CBC83 /* FoodOracleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOracleApp.swift; sourceTree = "<group>"; };
 		DBC6DDCF274C54D2005CBC83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				7D67FE48275D6473007B5E95 /* AddRecipeView.swift */,
 				7D68A2C127617CE500108F02 /* SplashScreenView.swift */,
 				1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */,
+				DB532D48276273A90011673B /* PushNotificationHelper.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */,
 				14859091275C355900A3DA9A /* Recipe.swift in Sources */,
 				1484BD9C27625F2D00FBCD23 /* RecipeDetailView.swift in Sources */,
+				DB532D49276273A90011673B /* PushNotificationHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
