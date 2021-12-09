@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var fireDBHelper : FireDBHelper
+    @State private var selection: Int? = nil
     
     var body: some View {
         NavigationView{
             ZStack(alignment: .top){
+                NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
                     GeometryReader{_ in
                         Text("Home")
@@ -50,9 +52,12 @@ struct ContentView: View {
                         Text("No recipes in the database")
                         Spacer()
                     }
-                }
-            }
-        }
+                }//else
+            }//zstack
+            .navigationBarItems(trailing: Button("Add New Recipe", action: {
+                self.selection = 1
+            }))
+        }//navigation view
         .onAppear(){
             self.fireDBHelper.getAllRecipes()
         }

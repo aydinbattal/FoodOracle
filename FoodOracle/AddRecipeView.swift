@@ -64,6 +64,7 @@ struct AddRecipeView: View {
                 
                 Spacer()
             }//VStack
+            .navigationBarTitle("Add New Recipe")
         }//navigation view
     }//body
     private func addNewRecipe(){
