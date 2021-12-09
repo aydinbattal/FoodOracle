@@ -37,8 +37,7 @@ struct AddRecipeView: View {
                         TextField("Enter ingridient name", text: self.$ingredientName)
                             .autocapitalization(.words)
                         TextField("Enter ingridient amount", value: self.$ingredientAmount, formatter: NumberFormatter())
-                            .autocapitalization(.words)
-                       
+                            .autocapitalization(.words)                      
                         
                     }
                     Button(action: {self.addIngredient()}){Text("Add Ingredient")}
@@ -56,6 +55,8 @@ struct AddRecipeView: View {
                 
                 Button(action: {
                     self.addNewRecipe()
+                    self.title = ""
+                    self.description = ""
                   
                 }){
                     Text("Add Recipe")
@@ -64,6 +65,7 @@ struct AddRecipeView: View {
                 
                 Spacer()
             }//VStack
+            .navigationBarTitle("Add New Recipe")
         }//navigation view
     }//body
     private func addNewRecipe(){
