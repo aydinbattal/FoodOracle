@@ -11,13 +11,28 @@ struct ContentView: View {
     @EnvironmentObject var fireDbHelper : FireDBHelper
     
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        List(self.fireDbHelper.recipeList.filter{$0.description.lowercased().contains(self.tfSearch.lowercased())}){i in
+            NavigationLink(destination: Detail(data: i)){
+                Text(i.title)
+            }
+        }
     }
+        .onAppear(){
+            self.fireDBHelper.getAllRecipes()
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct Detail : View {
+    var data : Recipe
+    
+    var body : some View{
+        Text(data.title)
+        Text(data.description)
     }
 }
