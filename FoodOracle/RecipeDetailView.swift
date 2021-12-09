@@ -33,14 +33,20 @@ struct RecipeDetailView: View {
                 TextField("Enter Description", text: self.$description)
                     .autocapitalization(.words)
                 
-                ForEach(ingredients, id: \.self){ ingredient in
-                    HStack{
-//                        Text(ingredient.amount)
-//                        Text(ingredient.ingredientName)
+                Section(header: Text("Ingredients")){
+                    ForEach(ingredients, id: \.self){ Ingredient in
+                        HStack{
+                            Text(String(Ingredient.amount))
+                            Text(Ingredient.ingredientName)
+                        }
                     }
-                    
-                    
-                }
+                }//section for ingredients
+                
+                Section(header: Text("Steps")){
+                    ForEach(stepsList, id: \.self){ step in
+                        Text(step)                        
+                    }
+                }//section for ingredients
                 
                 
                 Toggle(isOn: self.$isFavourite, label: {
