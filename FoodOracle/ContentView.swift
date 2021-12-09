@@ -17,8 +17,39 @@ struct ContentView: View {
                     GeometryReader{_ in
                         Text("Home")
                     }.background(Color("Color").edgesIgnoringSafeArea(.all))
-                    SearchBar(data: self.fireDBHelper.recipeList)
+//                    SearchBar(data: self.fireDBHelper.recipeList)
                     
+                    List{
+                        SearchBar(data: self.fireDBHelper.recipeList)
+                        ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
+                            NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
+                                VStack(alignment: .leading){
+                                    Text("\(currentRecipe.title)")
+                                        .fontWeight(.bold)
+                                    
+                                    Text("\(currentRecipe.description)")
+                                        .font(.callout)
+                                        .italic()
+                                }.padding(20)
+                                .onTapGesture {
+                                    print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                                }
+                            }//NavigationLink
+                        }//ForEach
+                        .onDelete(perform: {indexSet in
+                            for index in indexSet{
+                                //ask for confirmation and then delete
+                                self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
+                            }
+                        })
+                    }//List
+                    
+                }//if
+                else{
+                    VStack{
+                        Text("No recipes in the database")
+                        Spacer()
+                    }
                 }
             }
         }

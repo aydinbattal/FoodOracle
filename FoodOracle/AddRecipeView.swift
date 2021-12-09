@@ -58,7 +58,7 @@ struct AddRecipeView: View {
                     self.addNewRecipe()
                   
                 }){
-                    Text("Add Recipie")
+                    Text("Add Recipe")
                     
                 }
                 

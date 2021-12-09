@@ -20,8 +20,8 @@ struct FoodOracleApp: App {
     
     var body: some Scene {
         WindowGroup {
-       // ContentView().environmentObject(fireDBHelper)
-          AddRecipeView().environmentObject(fireDBHelper)
+        ContentView().environmentObject(fireDBHelper)
+          //AddRecipeView().environmentObject(fireDBHelper)
         }
     }
 }

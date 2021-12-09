@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		143CE449275C5464001BC8CE /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CE448275C5464001BC8CE /* Ingredient.swift */; };
+		1484BD9C27625F2D00FBCD23 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */; };
 		1485908D275C2FA500A3DA9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */; };
 		1485908F275C34FE00A3DA9A /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485908E275C34FE00A3DA9A /* FireDBHelper.swift */; };
 		14859091275C355900A3DA9A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14859090275C355900A3DA9A /* Recipe.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		143CE448275C5464001BC8CE /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1485908E275C34FE00A3DA9A /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
 		14859090275C355900A3DA9A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				143CE448275C5464001BC8CE /* Ingredient.swift */,
 				7D67FE48275D6473007B5E95 /* AddRecipeView.swift */,
 				7D68A2C127617CE500108F02 /* SplashScreenView.swift */,
+				1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				143CE449275C5464001BC8CE /* Ingredient.swift in Sources */,
 				DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */,
 				14859091275C355900A3DA9A /* Recipe.swift in Sources */,
+				1484BD9C27625F2D00FBCD23 /* RecipeDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
