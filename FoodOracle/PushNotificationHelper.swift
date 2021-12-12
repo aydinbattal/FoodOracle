@@ -21,8 +21,8 @@ class PushNotificationHelper{
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
 
-        dateComponents.hour = 19
-//        dateComponents.minute = 55
+        dateComponents.hour = 15
+        dateComponents.minute = 14
            
         // Create the trigger as a repeating event.
         let trigger = UNCalendarNotificationTrigger(
