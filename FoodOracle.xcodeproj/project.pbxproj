@@ -22,6 +22,7 @@
 		DBC6DDD2274C54D4005CBC83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */; };
 		DBC6DDD5274C54D4005CBC83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */; };
 		DBE545342766959200B95B93 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE545332766959200B95B93 /* LocationHelper.swift */; };
+		DBE545362766A07200B95B93 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE545352766A07200B95B93 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		DBE5453127668CF200B95B93 /* FoodOracle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodOracle.entitlements; sourceTree = "<group>"; };
 		DBE5453227668D6200B95B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBE545332766959200B95B93 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		DBE545352766A07200B95B93 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				DB532D48276273A90011673B /* PushNotificationHelper.swift */,
 				DBE545332766959200B95B93 /* LocationHelper.swift */,
 				14647B7B27669B30009A058C /* CustomModifiers.swift */,
+				DBE545352766A07200B95B93 /* MapView.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D68A2C227617CE500108F02 /* SplashScreenView.swift in Sources */,
+				DBE545362766A07200B95B93 /* MapView.swift in Sources */,
 				DBC6DDD0274C54D2005CBC83 /* ContentView.swift in Sources */,
 				1485908F275C34FE00A3DA9A /* FireDBHelper.swift in Sources */,
 				7D67FE49275D6473007B5E95 /* AddRecipeView.swift in Sources */,

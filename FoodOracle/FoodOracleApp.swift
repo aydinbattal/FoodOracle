@@ -56,6 +56,7 @@ struct FoodOracleApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     let fireDBHelper: FireDBHelper
+    let locationHelper = LocationHelper()
     
     init(){
         FirebaseApp.configure()
@@ -64,7 +65,7 @@ struct FoodOracleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            SplashScreen().environmentObject(fireDBHelper)
+            SplashScreen().environmentObject(fireDBHelper).environmentObject(locationHelper)
         //ContentView().environmentObject(fireDBHelper)
           //AddRecipeView().environmentObject(fireDBHelper)
         }

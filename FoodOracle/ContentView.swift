@@ -15,6 +15,7 @@ struct ContentView: View {
         NavigationView{
             ZStack(alignment: .bottom){
                 NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
+                NavigationLink(destination: MapView(), tag: 2, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
                     List{
                         SearchBar(data: self.fireDBHelper.recipeList)
