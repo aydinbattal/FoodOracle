@@ -22,7 +22,7 @@
 		<key>FirebaseCore.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>18</integer>
 		</dict>
 		<key>FirebaseCoreDiagnostics.xcscheme_^#shared#^_</key>
 		<dict>
@@ -62,7 +62,7 @@
 		<key>Pods-FoodOracle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>17</integer>
 		</dict>
 		<key>PromisesObjC.xcscheme_^#shared#^_</key>
 		<dict>
