@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		143CE449275C5464001BC8CE /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CE448275C5464001BC8CE /* Ingredient.swift */; };
+		14647B7C27669B30009A058C /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14647B7B27669B30009A058C /* CustomModifiers.swift */; };
 		1484BD9C27625F2D00FBCD23 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */; };
 		1485908D275C2FA500A3DA9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */; };
 		1485908F275C34FE00A3DA9A /* FireDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485908E275C34FE00A3DA9A /* FireDBHelper.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		143CE448275C5464001BC8CE /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		14647B7B27669B30009A058C /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1485908E275C34FE00A3DA9A /* FireDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireDBHelper.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */,
 				DB532D48276273A90011673B /* PushNotificationHelper.swift */,
 				DBE545332766959200B95B93 /* LocationHelper.swift */,
+				14647B7B27669B30009A058C /* CustomModifiers.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				DBC6DDCE274C54D2005CBC83 /* FoodOracleApp.swift in Sources */,
 				14859091275C355900A3DA9A /* Recipe.swift in Sources */,
 				1484BD9C27625F2D00FBCD23 /* RecipeDetailView.swift in Sources */,
+				14647B7C27669B30009A058C /* CustomModifiers.swift in Sources */,
 				DB532D49276273A90011673B /* PushNotificationHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
