@@ -14,10 +14,9 @@ struct SplashScreen: View {
     @State private var selection: Int? = nil
 
     var body: some View {
-        //NavigationView {
         VStack(alignment: .center) {
             if self.isActive {
-                // 3.
+                
                 ContentView()
             } else {
                 Text("Food Oracle")
@@ -33,10 +32,7 @@ struct SplashScreen: View {
                 }
             }
         }
-
-        //}//navigation view
     }
-
     func gotoMainScreen(time: Double) {
         DispatchQueue.main.asyncAfter(deadline: .now() + Double(time)) {
             self.isActive = true

@@ -117,10 +117,12 @@ struct Detail : View {
             Text(data.title)
                 .autocapitalization(.words)
                 .font(.title)
-                .padding(50)
+                .padding(25)
             Form{
+                Section(header: Text("Description")){
                 Text(data.description)
                     .autocapitalization(.words)
+                }
                 
                 Section(header: Text("Ingredients")){
                     ForEach(data.ingredients, id: \.self){ Ingredient in

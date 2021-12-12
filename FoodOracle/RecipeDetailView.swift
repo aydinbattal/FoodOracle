@@ -25,11 +25,13 @@ struct RecipeDetailView: View {
             TextField("Enter title", text: self.$title)
                 .autocapitalization(.words)
                 .font(.title)
-                .padding(50)
+                .padding(25)
             
             Form{
+                Section(header: Text("Description")){
                 TextField("Enter Description", text: self.$description)
                     .autocapitalization(.words)
+                }
                 
                 Section(header: Text("Ingredients")){
                     ForEach(ingredients, id: \.self){ Ingredient in
@@ -58,7 +60,10 @@ struct RecipeDetailView: View {
                 self.updateRecipe()
             }){
                 Text("Update Recipe Details")
+                    .fontWeight(.bold)
+                    .modifier(AppButtonTextModifier())
             }
+            .modifier(AppButtonModifier())
             
             Spacer()
         }//VStack
