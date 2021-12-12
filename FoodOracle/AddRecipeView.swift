@@ -11,8 +11,8 @@ struct AddRecipeView: View {
     @State private var description: String = ""
     @State private var ingredientAmount: Int = 0
     @State private var ingredientName: String = ""
-   // @State private var ingredientInput = "First, Second"
-   // @State private var ingredientInputArr = ingredientInput.components(separatedBy: ",")
+    // @State private var ingredientInput = "First, Second"
+    // @State private var ingredientInputArr = ingredientInput.components(separatedBy: ",")
     //make
     @State private var ingredientInput: String = ""
     @State private var steps: String = ""
@@ -20,59 +20,86 @@ struct AddRecipeView: View {
     @State private var isFavourite: Bool = false
     @State private var ingredients:  [Ingredient] = []
     @State private var stepsList: [String] = []
-  
+    
     @EnvironmentObject var fireDBHelper: FireDBHelper
     
     var body: some View {
-        NavigationView{
-            VStack{
-                Form{
+        VStack{
+            Form{
+                Section(header: Text("Recipe Information")){
                     TextField("Enter title", text: self.$title)
                         .autocapitalization(.words)
                     
                     TextField("Enter Description", text: self.$description)
-                        .autocapitalization(.words)
-                   
-                    HStack{
-                        TextField("Enter ingridient name", text: self.$ingredientName)
-                            .autocapitalization(.words)
-                        TextField("Enter ingridient amount", value: self.$ingredientAmount, formatter: NumberFormatter())
-                            .autocapitalization(.words)                      
-                        
-                    }
-                    Button(action: {self.addIngredient()}){Text("Add Ingredient")}
-                  
-                    
-                    TextField("Enter Steps", text: self.$steps)
-                        .autocapitalization(.words)
-                    Button(action: {self.addSteps()}){Text("Add Steps")}
-                    
-                    Toggle(isOn: self.$isFavourite, label: {
-                        Text("Favourite")
-                    })
-                    
-                }//Form
-                
-                Button(action: {
-                    self.addNewRecipe()
-                    self.title = ""
-                    self.description = ""
-                  
-                }){
-                    Text("Add Recipe")
-                    
+                    .autocapitalization(.words)
                 }
                 
-                Spacer()
-            }//VStack
-            .navigationBarTitle("Add New Recipe")
-        }//navigation view
+                Section(header: Text("Ingredients")){
+                    VStack{
+                        HStack{
+                            Text("Enter Name: ")
+                            TextField("Name", text: self.$ingredientName)
+                                .autocapitalization(.words)
+                        }
+                        HStack{
+                            Text("Enter Amount: ")
+                            TextField("Amount", value: self.$ingredientAmount, formatter: NumberFormatter())
+                                .autocapitalization(.words)
+                        }
+                    }
+                    Button(action: {
+                        self.addIngredient()
+                    }){
+                        Text("Add Ingredient")
+                            .fontWeight(.bold)
+                            .modifier(AppButtonTextModifier())
+                    }
+                    .modifier(AppButtonModifier())
+                }
+                
+                Section(header: Text("Steps")){
+                    TextField("Enter Step", text: self.$steps)
+                        .autocapitalization(.words)
+                    Button(action: {
+                        self.addSteps()
+                    }){
+                        Text("Add Steps")
+                            .fontWeight(.bold)
+                            .modifier(AppButtonTextModifier())
+                    }
+                    .modifier(AppButtonModifier())
+                }
+                
+                Toggle(isOn: self.$isFavourite, label: {
+                    Text("Favourite")
+                })
+                
+                Section{
+                    Button(action: {
+                        self.addNewRecipe()
+                        self.title = ""
+                        self.description = ""
+                        self.ingredientName = ""
+                        self.ingredientAmount = 0
+                        self.steps = ""
+                        
+                    }){
+                        Text("Add Recipe")
+                            .fontWeight(.bold)
+                            .modifier(AppButtonTextModifier())
+                    }
+                    .modifier(AppButtonModifier())
+                }
+            }//Form
+        }//VStack
+        .navigationBarTitle("Add New Recipe")
+        
     }//body
     private func addNewRecipe(){
-      //  var listOfIngredients = [Ingredient]()
-     //   listOfIngredients.append(Ingredient(amount: self.ingredientAmount, ingredientName: self.ingredientName))
-       // var listOfSteps = [String]()
-      //  listOfSteps.append(String(steps))
+        //  var listOfIngredients = [Ingredient]()
+        //   listOfIngredients.append(Ingredient(amount: self.ingredientAmount, ingredientName: self.ingredientName))
+        // var listOfSteps = [String]()
+        //  listOfSteps.append(String(steps))
         print("Adding recipe to database")
         if (!self.title.isEmpty && !self.description.isEmpty){
             //add to database
@@ -101,11 +128,11 @@ struct AddRecipeView: View {
             print(#function, "Show Alert that steps cannot be empty")
         }
         print(#function, "Steps: \(self.steps)")
-      }
+    }
 }//view
 
 //struct AddRecipeView_Previews: PreviewProvider {
- //   static var previews: some View {
-  //      AddRecipeView()
-  //  }
+//   static var previews: some View {
+//      AddRecipeView()
+//  }
 //}

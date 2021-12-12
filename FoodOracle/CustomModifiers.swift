@@ -36,7 +36,7 @@ struct AppButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         return content
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
+            .background(Color.green)
             .cornerRadius(10)
             .padding(10)
     }
