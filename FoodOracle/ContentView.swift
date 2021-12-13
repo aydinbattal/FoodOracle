@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var fireDBHelper : FireDBHelper
     @State private var selection: Int? = nil
-    init(){UITableView.appearance().backgroundColor = .clear
-           UITableViewCell.appearance().backgroundColor = .clear
+    init(){
+        UITableView.appearance().backgroundColor = .clear
+               UITableViewCell.appearance().backgroundColor = .clear
            let navBarAppearance = UINavigationBar.appearance()
                       navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                       navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -74,8 +75,11 @@ struct ContentView: View {
                         }//Section for all recipes
                     }//List
                     .padding()
-                    .offset(y:30)
-                    .frame(width: UIScreen.main.bounds.size.width, height: 585, alignment: .top)
+                    .offset(y:85)
+                    .frame(width: UIScreen.main.bounds.size.width, height: 595, alignment: .top)
+                    .onAppear(){
+                        
+                    }
                     
                 }//if
                 else{
@@ -94,8 +98,12 @@ struct ContentView: View {
                 }//Button
                 .modifier(AppButtonModifier())
                 .frame(maxHeight: .infinity, alignment: .bottom)
+                .padding(.bottom, 30)
+                .padding(.leading, 15)
+                .padding(.trailing, 15)
                 
                 SearchBar(data: self.fireDBHelper.recipeList)
+                    .offset(y:50)
                 
                 
             }//zstack
@@ -152,13 +160,18 @@ struct SearchBar: View {
                         NavigationLink(destination: Detail(data: i)){
                             Text(i.title)
                         }
-                    }.frame(height: 550)
+                    }.frame(height: 570)
                         .padding(.leading, 15)
                         .padding(.trailing, 15)
                         .padding(.top, 0)
+                        .onAppear(){
+                            UITableView.appearance().backgroundColor = .systemGray5
+                                   UITableViewCell.appearance().backgroundColor = .systemGray5
+                        }
+                        .cornerRadius(20)
                 }
             }
-        }.background(Color.white)
+        }
     }
 }
 
