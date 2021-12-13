@@ -2,7 +2,7 @@
 //  AddRecipeView.swift
 //  FoodOracle
 //
-//  Created by Karan Patel on 2021-12-05.
+//  Deep Patel - 991584445, Karan Patel - 991519115, Aydin Battal - 991521740
 //
 
 import SwiftUI
@@ -100,6 +100,7 @@ struct AddRecipeView: View {
         }//VStack
     }//gemoetryreader
         .navigationBarTitle("Add New Recipe")
+        
         
     }//body
     private func addNewRecipe(){

@@ -2,7 +2,7 @@
 //  RecipeDetailView.swift
 //  FoodOracle
 //
-//  Created by Deep on 2021-12-09.
+//Deep Patel - 991584445, Karan Patel - 991519115, Aydin Battal - 991521740
 //
 
 import SwiftUI

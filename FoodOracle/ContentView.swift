@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FoodOracle
 //
-//  Created by Aydin Battal, Karan Patel, Deep Patel
+//Deep Patel - 991584445, Karan Patel - 991519115, Aydin Battal - 991521740
 //
 
 import SwiftUI

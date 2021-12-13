@@ -4,7 +4,7 @@
 //
 //  Created by Aydin Battal on 2021-11-22.
 //
-
+//Deep Patel - 991584445, Karan Patel - 991519115, Aydin Battal - 991521740
 import SwiftUI
 import Firebase
 import FirebaseFirestore
