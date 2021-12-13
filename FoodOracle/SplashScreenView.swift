@@ -10,7 +10,6 @@ import SwiftUI
 struct SplashScreen: View {
     @State var isActive: Bool = false
     let main = ContentView()
-    let color = Color.init("black_1")
     @State private var selection: Int? = nil
 
     var body: some View {
@@ -23,8 +22,7 @@ struct SplashScreen: View {
                     .font(.largeTitle)
                 Image("foodoracle")
             }
-        }
-        .background(color)
+        }        
         .onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 withAnimation {
@@ -33,9 +31,5 @@ struct SplashScreen: View {
             }
         }
     }
-    func gotoMainScreen(time: Double) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Double(time)) {
-            self.isActive = true
-        }
-    }
+    
 }

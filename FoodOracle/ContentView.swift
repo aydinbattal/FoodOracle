@@ -19,23 +19,48 @@ struct ContentView: View {
                 if (self.fireDBHelper.recipeList.count > 0){
                     List{
                         SearchBar(data: self.fireDBHelper.recipeList)
-                        ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
-                            NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
-                                VStack(alignment: .leading){
-                                    Text("\(currentRecipe.title)")
-                                        .fontWeight(.bold)
-                                }.padding(20)
-                                    .onTapGesture {
-                                        print("\(self.fireDBHelper.recipeList[indx].title) selected")
-                                    }
-                            }//NavigationLink
-                        }//ForEach
-                        .onDelete(perform: {indexSet in
-                            for index in indexSet{
-                                //ask for confirmation and then delete
-                                self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
-                            }
-                        })
+                        Section(header: Text("Favourites")){
+                            ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
+                                
+                                if (currentRecipe.isFavourite){
+                                NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
+                                    VStack(alignment: .leading){
+                                        Text("\(currentRecipe.title)")
+                                            .fontWeight(.bold)
+                                    }.padding(20)
+                                        .onTapGesture {
+                                            print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                                        }
+                                }//NavigationLink
+                                }//if for favourite
+                            }//ForEach
+                            .onDelete(perform: {indexSet in
+                                for index in indexSet{
+                                    //ask for confirmation and then delete
+                                    self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
+                                }
+                            })
+                        }
+                        
+                        Section(header: Text("All Recipes")){
+                            ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
+                                NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
+                                    VStack(alignment: .leading){
+                                        Text("\(currentRecipe.title)")
+                                            .fontWeight(.bold)
+                                    }.padding(20)
+                                        .onTapGesture {
+                                            print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                                        }
+                                }//NavigationLink
+                            }//ForEach
+                            .onDelete(perform: {indexSet in
+                                for index in indexSet{
+                                    //ask for confirmation and then delete
+                                    self.fireDBHelper.deleteRecipe(recipeToDelete: self.fireDBHelper.recipeList[index])
+                                }
+                            })
+                        }//Section for all recipes
                     }//List
                     
                 }//if
@@ -120,8 +145,8 @@ struct Detail : View {
                 .padding(25)
             Form{
                 Section(header: Text("Description")){
-                Text(data.description)
-                    .autocapitalization(.words)
+                    Text(data.description)
+                        .autocapitalization(.words)
                 }
                 
                 Section(header: Text("Ingredients")){
