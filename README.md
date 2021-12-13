@@ -53,6 +53,7 @@ Each person will oversee and share tasks of the page design of their assigned ta
 * Implement working timed notifications that will remind users. 
 * Task may be divided further if the workload is too high.
 * Design of the page that will be required for these functions with Deep.
+* Implement a Map View where user can search for nearby restaurants etc.
 
 ### Deep (991584445)
 * Oversee the general layout and design of the app for the project with included inputs from Karan and Aydin.
