@@ -115,6 +115,7 @@ struct ContentView: View {
         }//navigation view
     }//geometry reader
         .navigationBarBackButtonHidden(true)
+        .accentColor( .black)
         .onAppear(){
             self.fireDBHelper.getAllRecipes()
         }
