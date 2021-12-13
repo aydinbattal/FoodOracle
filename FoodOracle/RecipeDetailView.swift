@@ -21,19 +21,26 @@ struct RecipeDetailView: View {
     @EnvironmentObject var fireDBHelper: FireDBHelper
     
     var body: some View {
+    GeometryReader{ geometry in
+        Image("blurrededitbg").resizable()
+                           .aspectRatio(geometry.size, contentMode: .fill)
+                           .edgesIgnoringSafeArea(.all)
         VStack{
             TextField("Enter title", text: self.$title)
                 .autocapitalization(.words)
                 .font(.title)
                 .padding(25)
+                .foregroundColor(.white)
+                
+               
             
             Form{
-                Section(header: Text("Description")){
+                Section(header: Text("Description").foregroundColor(.white).fontWeight(.bold)){
                 TextField("Enter Description", text: self.$description)
                     .autocapitalization(.words)
                 }
                 
-                Section(header: Text("Ingredients")){
+                Section(header: Text("Ingredients").foregroundColor(.white).fontWeight(.bold)){
                     ForEach(ingredients, id: \.self){ Ingredient in
                         HStack{
                             Text(String(Ingredient.amount))
@@ -43,7 +50,7 @@ struct RecipeDetailView: View {
                     .onDelete(perform: deleteIngredients)
                 }//section for ingredients
                 
-                Section(header: Text("Steps")){
+                Section(header: Text("Steps").foregroundColor(.white).fontWeight(.bold)){
                     ForEach(stepsList, id: \.self){ step in
                         Text(step)                        
                     }
@@ -67,6 +74,7 @@ struct RecipeDetailView: View {
             
             Spacer()
         }//VStack
+    }//geometryview
         .frame(maxWidth: .infinity)
         .onAppear(){
             self.title = self.fireDBHelper.recipeList[selectedRecipeIndex].title

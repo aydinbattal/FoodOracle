@@ -22,19 +22,25 @@ struct AddRecipeView: View {
     @State private var stepsList: [String] = []
     
     @EnvironmentObject var fireDBHelper: FireDBHelper
-    
+  
     var body: some View {
+    GeometryReader{ geometry in
+        Image("blurrednutsbg").resizable()
+                           .aspectRatio(geometry.size, contentMode: .fill)
+                           .edgesIgnoringSafeArea(.all)
         VStack{
+           
             Form{
-                Section(header: Text("Recipe Information")){
+                Section(header: Text("Recipe Information").foregroundColor(.black).fontWeight(.bold)){
                     TextField("Enter title", text: self.$title)
                         .autocapitalization(.words)
+                    
                     
                     TextField("Enter Description", text: self.$description)
                     .autocapitalization(.words)
                 }
                 
-                Section(header: Text("Ingredients")){
+                Section(header: Text("Ingredients").foregroundColor(.black).fontWeight(.bold)){
                     VStack{
                         HStack{
                             Text("Enter Name: ")
@@ -57,7 +63,7 @@ struct AddRecipeView: View {
                     .modifier(AppButtonModifier())
                 }
                 
-                Section(header: Text("Steps")){
+                Section(header: Text("Steps").foregroundColor(.black).fontWeight(.bold)){
                     TextField("Enter Step", text: self.$steps)
                         .autocapitalization(.words)
                     Button(action: {
@@ -92,6 +98,7 @@ struct AddRecipeView: View {
                 }
             }//Form
         }//VStack
+    }//gemoetryreader
         .navigationBarTitle("Add New Recipe")
         
     }//body
