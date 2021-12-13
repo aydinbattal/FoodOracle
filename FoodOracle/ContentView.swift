@@ -13,25 +13,25 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-            ZStack(alignment: .bottom){
+            ZStack(alignment: .top){
                 NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
                 NavigationLink(destination: NearbyPlacesView(), tag: 2, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
                     List{
-                        SearchBar(data: self.fireDBHelper.recipeList)
+                        
                         Section(header: Text("Favourites")){
                             ForEach (self.fireDBHelper.recipeList.enumerated().map({$0}), id: \.element.self){ indx, currentRecipe in
                                 
                                 if (currentRecipe.isFavourite){
-                                NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
-                                    VStack(alignment: .leading){
-                                        Text("\(currentRecipe.title)")
-                                            .fontWeight(.bold)
-                                    }.padding(20)
-                                        .onTapGesture {
-                                            print("\(self.fireDBHelper.recipeList[indx].title) selected")
-                                        }
-                                }//NavigationLink
+                                    NavigationLink(destination: RecipeDetailView(selectedRecipeIndex: indx)){
+                                        VStack(alignment: .leading){
+                                            Text("\(currentRecipe.title)")
+                                                .fontWeight(.bold)
+                                        }.padding()
+                                            .onTapGesture {
+                                                print("\(self.fireDBHelper.recipeList[indx].title) selected")
+                                            }
+                                    }//NavigationLink
                                 }//if for favourite
                             }//ForEach
                             .onDelete(perform: {indexSet in
@@ -48,7 +48,7 @@ struct ContentView: View {
                                     VStack(alignment: .leading){
                                         Text("\(currentRecipe.title)")
                                             .fontWeight(.bold)
-                                    }.padding(20)
+                                    }.padding()
                                         .onTapGesture {
                                             print("\(self.fireDBHelper.recipeList[indx].title) selected")
                                         }
@@ -62,6 +62,9 @@ struct ContentView: View {
                             })
                         }//Section for all recipes
                     }//List
+                    .padding()
+                    .offset(y:30)
+                    .frame(width: UIScreen.main.bounds.size.width, height: 585, alignment: .top)
                     
                 }//if
                 else{
@@ -79,8 +82,13 @@ struct ContentView: View {
                         .modifier(AppButtonTextModifier())
                 }//Button
                 .modifier(AppButtonModifier())
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                
+                SearchBar(data: self.fireDBHelper.recipeList)
+                
+                
             }//zstack
-            .navigationBarTitle("Recipe List")
+            .navigationBarTitle("Food Oracle")
             .navigationBarItems(trailing: Button("Add New Recipe", action: {
                 self.selection = 1
             }))
@@ -108,26 +116,34 @@ struct SearchBar: View {
         VStack(spacing: 0){
             HStack{
                 TextField("Search", text: self.$tfSearch)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.leading, 15)
+                    .padding(.trailing, 15)
+                    .padding(.bottom, 15)
                 if (self.tfSearch != ""){
                     Button(action: {
                         self.tfSearch = ""
                     }) {
                         Text("Cancel")
+                            .padding(.trailing, 15)
+                            .padding(.bottom, 15)
                     }
                     .foregroundColor(.black)
                 }
             }
             if (self.tfSearch != ""){
-                if (self.data.filter({$0.description.lowercased().contains(self.tfSearch.lowercased())}).count == 0){
-                    Text("No Results Found")
-                        .foregroundColor(Color.black.opacity(0.5).padding() as? Color)
+                if (self.data.filter({$0.title.lowercased().contains(self.tfSearch.lowercased())}).count == 0){
+//                    Text("No Results Found")
                 } else {
-                    List(self.data.filter{$0.description.lowercased().contains(self.tfSearch.lowercased())}){i in
+                    List(self.data.filter{$0.title.lowercased().contains(self.tfSearch.lowercased())}){i in
                         
                         NavigationLink(destination: Detail(data: i)){
                             Text(i.title)
                         }
-                    }.frame(height: UIScreen.main.bounds.height/5)
+                    }.frame(height: 550)
+                        .padding(.leading, 15)
+                        .padding(.trailing, 15)
+                        .padding(.top, 0)
                 }
             }
         }.background(Color.white)
@@ -164,7 +180,7 @@ struct Detail : View {
                     }
                 }//section for steps
             }//Form
-            Spacer()
+         
         }//VStack
     }
 }
