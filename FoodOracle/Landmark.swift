@@ -2,7 +2,7 @@
 //  Landmark.swift
 //  FoodOracle
 //
-//  Created by Aydin Battal on 2021-12-12.
+//Deep Patel - 991584445, Karan Patel - 991519115, Aydin Battal - 991521740
 //
 
 import Foundation
