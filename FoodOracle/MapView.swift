@@ -7,82 +7,49 @@
 
 import SwiftUI
 import MapKit
+import Foundation
 
-struct MapView: View {
-    @EnvironmentObject var locationHelper: LocationHelper
+class Coordinator: NSObject, MKMapViewDelegate {
+    var control: MapView
     
-    var body: some View {
-        VStack{
-            
-            if(self.locationHelper.currentLocation != nil){
-                //show current location on map
-                MyMap(location: self.locationHelper.currentLocation!)
-            }else{
-                Text("Obtaining user location...")
+    init(_ control: MapView){
+        self.control = control
+    }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        if let annotationView = views.first {
+            if let annotation = annotationView.annotation {
+                if annotation is MKUserLocation {
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    mapView.setRegion(region, animated: true)
+                }
             }
         }
-        .onAppear(){
-            self.locationHelper.checkPermission()
-        }
-    }//body
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
     }
 }
 
-struct MyMap : UIViewRepresentable{
-    private var location: CLLocation
-    @EnvironmentObject var locationHelper: LocationHelper
-    let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-    
-    init(location:CLLocation){
-        self.location = location
-    }
+struct MapView: UIViewRepresentable {
+    let landmarks: [Landmark]
     func makeUIView(context: Context) -> MKMapView {
-        let sourceCoordinates : CLLocationCoordinate2D
-        let region: MKCoordinateRegion
-        
-        if(self.locationHelper.currentLocation != nil){
-            sourceCoordinates = self.locationHelper.currentLocation!.coordinate
-        }else{
-            sourceCoordinates = CLLocationCoordinate2D(latitude: 43.642567, longitude: -79.387024)
-        }
-        
-        region = MKCoordinateRegion(center: sourceCoordinates, span: span)
-        
-        let map = MKMapView(frame: .infinite)
-        
-        map.mapType = MKMapType.standard
+        let map = MKMapView()
         map.showsUserLocation = true
-        map.isZoomEnabled = true
-        map.isScrollEnabled = true
-        map.isUserInteractionEnabled = true
-        map.setRegion(region, animated: true)
-        self.locationHelper.addPinToMapView(mapView: map, coordinates: sourceCoordinates, title: "You're Here")
-        
+        map.delegate = context.coordinator
         return map
     }
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        //update map to show current location
-        let sourceCoordinates : CLLocationCoordinate2D
-        let region: MKCoordinateRegion
-        
-        if(self.locationHelper.currentLocation != nil){
-            sourceCoordinates = self.locationHelper.currentLocation!.coordinate
-        }else{
-            sourceCoordinates = CLLocationCoordinate2D(latitude: 43.642567, longitude: -79.387024)
-        }
-        
-        region = MKCoordinateRegion(center: sourceCoordinates, span: span)
-        
-        uiView.setRegion(region, animated: true)
-        self.locationHelper.addPinToMapView(mapView: uiView, coordinates: sourceCoordinates, title: "You're Here")
-
-        
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
-    typealias UIViewType = MKMapView
+    
+    func updateUIView(_ uiView: MKMapView, context: UIViewRepresentableContext<MapView>) {
+        updateAnnotations(from: uiView)
+    }
+    
+    private func updateAnnotations(from mapView: MKMapView){
+        mapView.removeAnnotations(mapView.annotations)
+        let annotations = self.landmarks.map(LandmarkAnnotation.init)
+        mapView.addAnnotations(annotations)
+    }
 }
+
 
