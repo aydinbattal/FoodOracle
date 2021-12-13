@@ -21,8 +21,8 @@ class PushNotificationHelper{
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
 
-        dateComponents.hour = 15
-        dateComponents.minute = 14
+        dateComponents.hour = 19
+//        dateComponents.minute = 41
            
         // Create the trigger as a repeating event.
         let trigger = UNCalendarNotificationTrigger(
@@ -120,8 +120,10 @@ class PushNotificationHelper{
             print(#function, "Permission for push notification is granted")
             //fetch notification setting and then register
 //            PushNotificationHelper.getNotificationSettings()
+            PushNotificationHelper.scheduleNotificationForBreakfast()
+            PushNotificationHelper.scheduleNotificationForLunch()
             PushNotificationHelper.scheduleNotificationForDinner()
-
+            
         }
     }
     
