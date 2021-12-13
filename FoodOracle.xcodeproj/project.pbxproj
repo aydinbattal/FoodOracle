@@ -81,6 +81,10 @@
 		7D6596A7275C100A0027086B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				143CE448275C5464001BC8CE /* Ingredient.swift */,
+				DBE545412766C5E700B95B93 /* Landmark.swift */,
+				DBE5453F2766C4AB00B95B93 /* LandmarkAnnotation.swift */,
+				14859090275C355900A3DA9A /* Recipe.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +92,13 @@
 		7D6596A8275C101C0027086B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D67FE48275D6473007B5E95 /* AddRecipeView.swift */,
+				DBE545352766A07200B95B93 /* NearbyPlacesView.swift */,
+				DBE545372766AB9700B95B93 /* MapView.swift */,
+				DBE5453D2766B3F900B95B93 /* PlaceListView.swift */,
+				1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */,
+				7D68A2C127617CE500108F02 /* SplashScreenView.swift */,
+				DBC6DDCF274C54D2005CBC83 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +106,9 @@
 		7D6596A9275C10250027086B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DB532D48276273A90011673B /* PushNotificationHelper.swift */,
+				DBE545332766959200B95B93 /* LocationHelper.swift */,
+				1485908E275C34FE00A3DA9A /* FireDBHelper.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,25 +147,11 @@
 				1485908C275C2FA500A3DA9A /* GoogleService-Info.plist */,
 				7D6596A7275C100A0027086B /* Models */,
 				7D6596A8275C101C0027086B /* Views */,
+				DBE54543276709D000B95B93 /* Modifiers */,
 				7D6596A9275C10250027086B /* Controllers */,
 				DBC6DDCD274C54D2005CBC83 /* FoodOracleApp.swift */,
-				DBC6DDCF274C54D2005CBC83 /* ContentView.swift */,
 				DBC6DDD1274C54D4005CBC83 /* Assets.xcassets */,
 				DBC6DDD3274C54D4005CBC83 /* Preview Content */,
-				1485908E275C34FE00A3DA9A /* FireDBHelper.swift */,
-				14859090275C355900A3DA9A /* Recipe.swift */,
-				143CE448275C5464001BC8CE /* Ingredient.swift */,
-				7D67FE48275D6473007B5E95 /* AddRecipeView.swift */,
-				7D68A2C127617CE500108F02 /* SplashScreenView.swift */,
-				1484BD9B27625F2D00FBCD23 /* RecipeDetailView.swift */,
-				DB532D48276273A90011673B /* PushNotificationHelper.swift */,
-				DBE545332766959200B95B93 /* LocationHelper.swift */,
-				14647B7B27669B30009A058C /* CustomModifiers.swift */,
-				DBE545352766A07200B95B93 /* NearbyPlacesView.swift */,
-				DBE545372766AB9700B95B93 /* MapView.swift */,
-				DBE5453D2766B3F900B95B93 /* PlaceListView.swift */,
-				DBE5453F2766C4AB00B95B93 /* LandmarkAnnotation.swift */,
-				DBE545412766C5E700B95B93 /* Landmark.swift */,
 			);
 			path = FoodOracle;
 			sourceTree = "<group>";
@@ -162,6 +162,14 @@
 				DBC6DDD4274C54D4005CBC83 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBE54543276709D000B95B93 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				14647B7B27669B30009A058C /* CustomModifiers.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
