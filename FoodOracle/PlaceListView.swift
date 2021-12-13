@@ -29,10 +29,27 @@ struct PlaceListView: View {
                             .fontWeight(.bold)
                         
                         Text(landmark.title)
+                    
+                    }
+                    .onTapGesture {
+                        redirectToGPS(lat: landmark.coordinate.latitude, lon: landmark.coordinate.longitude, name: landmark.name)
                     }
                 }
             }.animation(nil, value: UUID())
         }.cornerRadius(10)
+    }
+    
+    func redirectToGPS(lat: CLLocationDegrees, lon: CLLocationDegrees, name: String){
+        let regionDistance: CLLocationDistance = 1000;
+        let coordinates = CLLocationCoordinate2DMake(lat, lon)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        mapItem.openInMaps(launchOptions: options)
     }
 }
 
