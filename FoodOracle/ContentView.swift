@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FoodOracle
 //
-//  Created by Aydin Battal on 2021-11-22.
+//  Created by Aydin Battal, Karan Patel, Deep Patel
 //
 
 import SwiftUI
@@ -10,10 +10,21 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var fireDBHelper : FireDBHelper
     @State private var selection: Int? = nil
-    
+    init(){UITableView.appearance().backgroundColor = .clear
+           UITableViewCell.appearance().backgroundColor = .clear
+           let navBarAppearance = UINavigationBar.appearance()
+                      navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+                      navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+       }
     var body: some View {
+    GeometryReader{ geometry in
+                
         NavigationView{
+       
             ZStack(alignment: .top){
+                Image("blurfoodbg").resizable()
+                                    .aspectRatio(geometry.size, contentMode: .fill)
+                                    .edgesIgnoringSafeArea(.all)
                 NavigationLink(destination: AddRecipeView(), tag: 1, selection: $selection){}
                 NavigationLink(destination: NearbyPlacesView(), tag: 2, selection: $selection){}
                 if (self.fireDBHelper.recipeList.count > 0){
@@ -88,12 +99,13 @@ struct ContentView: View {
                 
                 
             }//zstack
+     
             .navigationBarTitle("Food Oracle")
             .navigationBarItems(trailing: Button("Add New Recipe", action: {
                 self.selection = 1
             }))
         }//navigation view
-        
+    }//geometry reader
         .navigationBarBackButtonHidden(true)
         .onAppear(){
             self.fireDBHelper.getAllRecipes()
