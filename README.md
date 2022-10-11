@@ -58,3 +58,7 @@ Each person will oversee and share tasks of the page design of their assigned ta
 ### Deep (991584445)
 * Oversee the general layout and design of the app for the project with included inputs from Karan and Aydin.
 * Implement and configure database/API tasks and calls and assist Aydin and Karan to use the features.
+
+
+
+https://user-images.githubusercontent.com/59744728/195024146-dd1b74b8-d981-4ff9-a1c8-864ff6026d78.mov
